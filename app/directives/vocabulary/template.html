@@ -1,0 +1,22 @@
+<div ng-show="ctrl.count < ctrl.fcManager.vocabularyList.length">
+    <div class="col-lg-8">
+        <h6 class="vocab">TERM</h6>
+        <h1 class="vocab-header">{{ctrl.fcManager.vocabularyList[ctrl.count].term}}</h1>
+        <h6 class="vocab">DEFINITION</h6>
+        <h1 class=vocab-header" ng-show="ctrl.next">{{ctrl.fcManager.vocabularyList[ctrl.count].definition}}</h1>
+    </div>
+    <div class="col-lg-4">
+        <h6>{{ctrl.count + 1}} of {{ctrl.fcManager.vocabularyList.length}}</h6>
+        <div id="show-answer" class="btn-default btn-full" ng-show="ctrl.answer" ng-click="ctrl.showAnswer()">Show Answer</div>
+        <div id="show-next" class="btn-default btn-full" ng-show="ctrl.next" ng-click="ctrl.showNext()">Show Next</div>
+    </div>
+</div>
+<div ng-hide="ctrl.count < ctrl.fcManager.vocabularyList.length">
+    <div class="col-lg-8">
+        <h1>End of List</h1>
+    </div>
+    <div class="col-lg-4">
+        <div class="btn-default btn-half" ng-click="ctrl.reset()">Restart?</div>
+        <div class="btn-default btn-half" ng-click="ctrl.getNewList()">Get New List?</div>
+    </div>
+</div>
